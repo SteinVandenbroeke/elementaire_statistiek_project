@@ -78,6 +78,7 @@ ChiSq$expected
 #-----------
 #Leeftijd voorspellen met BMI
 #-----------
+png(paste('output/', "bmi_age_pred", '.png', sep=""), width = 1000, height = 400)
 par(mfcol=c(1,3))
 plot(gegevens$age, gegevens$bmi, main="Leeftijd vs BMI", xlab="Leeftijd", ylab="BMI")
 correlation_result <- cor(gegevens$age, gegevens$bmi)
@@ -94,4 +95,5 @@ plot(model$residuals, main="Residuals", ylab="Residuals")
 # Q-Q plot van residuals
 qqnorm(model$residuals)
 qqline(model$residuals)
+dev.off()
 
