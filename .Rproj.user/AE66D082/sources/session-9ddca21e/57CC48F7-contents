@@ -1,0 +1,15 @@
+NrJongens = c(34,33,7)
+NrMeisjes = c(22,22,4)
+Ctable1 = data.frame(NrJongens,NrMeisjes)
+ChiSq = chisq.test(Ctable1)
+ChiSq
+ChiSq$observed
+ChiSq$expected
+
+gegevens=read.csv(file=file.choose(),header=TRUE,dec=",",sep=";")
+Ctable = ftable(gegevens)
+ChiSq = chisq.test(Ctable)
+ChiSq
+ChiSq$observed
+ChiSq$expected
+
